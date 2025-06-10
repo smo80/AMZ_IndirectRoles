@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Open Multiple Links</title>
+</head>
+<body>
+
+<h2> Login to Chime </h2>
+<button onclick="openLinkChime()" > Open Links</button>
+
+<script>
+    function openLinkChime() {
+      const urls = [
+        "https://signin.id.ue1.app.chime.aws//?callback_url=https%3A%2F%2Fapp.chime.aws%2F%3Fcsrf_token%3DkSZPPQ8yBJipjUrbIkXi1JqMmRt6flMc&code_challenge=NzIzMTUyOWY1NDRjZDhjMzJkZGVlNTY4MTg1Zjc1ZjlhZmVjZmMxOGVhNTgzOGVmNzAzZTI2M2VhNDcwZDU0Zg"
+      ];
+    
+      for (let url of urls) {
+        window.open(url, '_blank');
+      }
+    }
+    </script>
+
+<h2> Login To SLACK (workspace = "amazon.enterprise") </h2>
+<button onclick="openLinkSLACK()" > Open Links</button>
+
+<script>
+    function openLinkSLACK() {
+      const urls = [
+        "https://slack.com/workspace-signin"
+      ];
+    
+      for (let url of urls) {
+        window.open(url, '_blank');
+      }
+    }
+    </script>
+
+
+<h2> Login (Make sure you select "Secure sign in" and open POPS) </h2>
+<h3> POPS = outbound -> packapp -> POPS </h3>
+<button onclick="openLinkLogin()" > Open Links</button>
+
+<script>
+    function openLinkLogin() {
+      const urls = [
+        "https://fcmenu-aid-regionalized.corp.amazon.com/SAT2"
+      ];
+    
+      for (let url of urls) {
+        window.open(url, '_blank');
+      }
+    }
+    </script>
+
+
+<h2> Code Yourself </h2>
+<h3> PS= "SDWLD" ; SLAMOP = "PMSO" ; JP = :"TOTEJP"</h3>
+<button onclick="openLinksCode()" > Open Links</button>
+
+<script>
+    function openLinksCode() {
+      const urls = [
+        "https://fcmenu-iad-regionalized.corp.amazon.com/SAT2/laborTrackingKiosk"
+      ];
+    
+      for (let url of urls) {
+        window.open(url, '_blank');
+      }
+    }
+    </script>
+
+
+
+
+<h2>Open All Resources for Problem Solver</h2>
+<button onclick="openLinks()">Open Links</button>
+
+<script>
+function openLinks() {
+  const urls = [
+    "https:///tiny.amazon.com/twxs0se8/rodeamazSAT2ExSD",
+    "https://fcreaserch-na.aka.amazon.com/SAT2/search",
+    "https://aft-pops-ida.aka.amazon.com/vertical_choice",
+    "https://eagleeye.amazon.dev/search?redirect=false&lang=en_US&region=NA"
+  ];
+
+  for (let url of urls) {
+    window.open(url, '_blank');
+  }
+}
+</script>
+
+<h2>Open All Resources for Slam Operatora</h2>
+<button onclick="openLinks()">Open Links</button>
+
+<script>
+function openLinks() {
+  const urls = [
+    "https:///tiny.amazon.com/twxs0se8/rodeamazSAT2ExSD",
+    "https://fcreaserch-na.aka.amazon.com/SAT2/search",
+    "https://aft-pops-ida.aka.amazon.com/vertical_choice",
+    "https://eagleeye.amazon.dev/search?redirect=false&lang=en_US&region=NA",
+    "https://fcswat-us.aka.amazon.com/workflow/init",
+    "https://fcswat-us.aka.amazon.com/workflow/init",
+    "https://poscatch.com/barcode-generator/"
+  ];
+
+  for (let url of urls) {
+    window.open(url, '_blank');
+  }
+}
+</script>
+
+</body>
+</html>
