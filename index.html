@@ -1,114 +1,224 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Open Multiple Links</title>
+  <meta charset="UTF-8" />
+  <title>Amazon Resource Launcher</title>
+  <style>
+    body {
+      font-family: "Amazon Ember", Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom right, #f7dfa0, #f3a847, #e47911);
+      background-attachment: fixed;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #232f3e;
+      padding: 20px;
+      color: white;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+    }
+
+    main {
+      padding: 30px 20px;
+      max-width: 960px;
+      margin: auto;
+    }
+
+    .section {
+      background: #ffffff;
+      border-left: 6px solid #ff9900;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      margin-bottom: 30px;
+      padding: 25px;
+    }
+
+    h2, h3 {
+      color: #232f3e;
+      text-align: center;
+    }
+
+    .launch {
+      background-color: #ff9900;
+      border: none;
+      padding: 12px 20px;
+      font-size: 15px;
+      font-weight: bold;
+      border-radius: 5px;
+      color: #111;
+      cursor: pointer;
+      display: block;
+      margin: 15px auto;
+      transition: background-color 0.3s ease;
+    }
+
+    .launch:hover {
+      background-color: #e68a00;
+    }
+
+    .tab {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .tab button {
+      background-color: #ddd;
+      border: none;
+      padding: 10px 25px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .tab button:hover {
+      background-color: #bbb;
+    }
+
+    .tab button.active {
+      background-color: #232f3e;
+      color: white;
+    }
+
+    .tabcontent {
+      display: none;
+      background-color: #fcfcfc;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      margin-top: 10px;
+    }
+
+    .tabcontent h3 {
+      color: #e47911;
+    }
+  </style>
 </head>
 <body>
 
-<h2> Login to Chime </h2>
-<button onclick="openLinkChime()" > Open Links</button>
+<header>
+  <h1>Amazon FC Resource Launcher</h1>
+</header>
+
+<main>
+  <div class="section">
+    <h2>Login to Chime</h2>
+    <button class="launch" onclick="openLinkChime()">Open Chime</button>
+  </div>
+
+  <div class="section">
+    <h2>Login to Slack</h2>
+    <h3>Workspace: <code>amazon.enterprise</code></h3>
+    <button class="launch" onclick="openLinkSLACK()">Open Slack</button>
+  </div>
+
+  <div class="section">
+    <h2>Login to POPS</h2>
+    <h3>Select “Secure Sign-In” and go to: outbound → packapp → POPS</h3>
+    <button class="launch" onclick="openLinkLogin()">Open POPS</button>
+  </div>
+
+  <div class="section">
+    <h2>Code Yourself</h2>
+    <h3>PS = "SDWLD" | SLAMOP = "PMSO" | JP = "TOTEJP"</h3>
+    <button class="launch" onclick="openLinksCode()">Open Labor Tracking</button>
+  </div>
+
+  <div class="section">
+    <h2>Job Role</h2>
+    <div class="tab">
+      <button class="tablinks" onclick="openTab(event, 'ProblemSolver')">Problem Solver</button>
+      <button class="tablinks" onclick="openTab(event, 'SlamOperator')">Slam Operator</button>
+      <button class="tablinks" onclick="openTab(event, 'DirectedJackpot')">Directed Jackpot</button>
+    </div>
+
+    <div id="ProblemSolver" class="tabcontent">
+      <h3>Problem Solver Resources</h3>
+      <button class="launch" onclick="openLinks([
+        'https:///tiny.amazon.com/twxs0se8/rodeamazSAT2ExSD',
+        'https://fcreaserch-na.aka.amazon.com/SAT2/search',
+        'https://aft-pops-ida.aka.amazon.com/vertical_choice',
+        'https://eagleeye.amazon.dev/search?redirect=false&lang=en_US&region=NA',
+        'http://outboundsnapshotwebapp2-dev.us-east-1.elasticbeanstalk.com/',
+        'https://aft-qt-na.aka.amazon.com/app/pod-portal/pod-details'
+      ])">Open All Problem Solver Links</button>
+    </div>
+
+    <div id="SlamOperator" class="tabcontent">
+      <h3>Slam Operator Resources</h3>
+      <button class="launch" onclick="openLinks([
+        'https:///tiny.amazon.com/twxs0se8/rodeamazSAT2ExSD',
+        'https://fcreaserch-na.aka.amazon.com/SAT2/search',
+        'https://aft-pops-ida.aka.amazon.com/vertical_choice',
+        'https://eagleeye.amazon.dev/search?redirect=false&lang=en_US&region=NA',
+        'https://fcswat-us.aka.amazon.com/workflow/init',
+        'https://fcswat-us.aka.amazon.com/workflow/init',
+        'https://poscatch.com/barcode-generator/'
+      ])">Open All Slam Operator Links</button>
+    </div>
+
+    <div id="DirectedJackpot" class="tabcontent">
+      <h3>Directed Jackpot Resources</h3>
+      <button class="launch" onclick="openLinks([
+        'https:///tiny.amazon.com/twxs0se8/rodeamazSAT2ExSD',
+        'https://fcreaserch-na.aka.amazon.com/SAT2/search',
+        'https://aft-pops-ida.aka.amazon.com/vertical_choice',
+        'https://web.iad.prod.taskui.aft.amazon.dev/?listingID=eb105a2a-bcba-4aa9-9b56-5ea2d9e22b5b#initialized',
+        'http://routing-tool-iad.aka.amazon.com/tote-route?jobName=RouteSingle',
+        'https://routing-tool-iad.aka.amazon.com/tote-route?jobName=CheckDestination',
+        'https://tinyurl.com/bdd33au5'
+      ])">Open All Directed Jackpot Links</button>
+    </div>
+  </div>
+</main>
 
 <script>
-    function openLinkChime() {
-      const urls = [
-        "https://signin.id.ue1.app.chime.aws//?callback_url=https%3A%2F%2Fapp.chime.aws%2F%3Fcsrf_token%3DkSZPPQ8yBJipjUrbIkXi1JqMmRt6flMc&code_challenge=NzIzMTUyOWY1NDRjZDhjMzJkZGVlNTY4MTg1Zjc1ZjlhZmVjZmMxOGVhNTgzOGVmNzAzZTI2M2VhNDcwZDU0Zg"
-      ];
-    
-      for (let url of urls) {
-        window.open(url, '_blank');
-      }
-    }
-    </script>
-
-<h2> Login To SLACK (workspace = "amazon.enterprise") </h2>
-<button onclick="openLinkSLACK()" > Open Links</button>
-
-<script>
-    function openLinkSLACK() {
-      const urls = [
-        "https://slack.com/workspace-signin"
-      ];
-    
-      for (let url of urls) {
-        window.open(url, '_blank');
-      }
-    }
-    </script>
-
-
-<h2> Login (Make sure you select "Secure sign in" and open POPS) </h2>
-<h3> POPS = outbound -> packapp -> POPS </h3>
-<button onclick="openLinkLogin()" > Open Links</button>
-
-<script>
-    function openLinkLogin() {
-      const urls = [
-        "https://fcmenu-aid-regionalized.corp.amazon.com/SAT2"
-      ];
-    
-      for (let url of urls) {
-        window.open(url, '_blank');
-      }
-    }
-    </script>
-
-
-<h2> Code Yourself </h2>
-<h3> PS= "SDWLD" ; SLAMOP = "PMSO" ; JP = :"TOTEJP"</h3>
-<button onclick="openLinksCode()" > Open Links</button>
-
-<script>
-    function openLinksCode() {
-      const urls = [
-        "https://fcmenu-iad-regionalized.corp.amazon.com/SAT2/laborTrackingKiosk"
-      ];
-    
-      for (let url of urls) {
-        window.open(url, '_blank');
-      }
-    }
-    </script>
-
-
-
-
-<h2>Open All Resources for Problem Solver</h2>
-<button onclick="openLinks()">Open Links</button>
-
-<script>
-function openLinks() {
-  const urls = [
-    "https:///tiny.amazon.com/twxs0se8/rodeamazSAT2ExSD",
-    "https://fcreaserch-na.aka.amazon.com/SAT2/search",
-    "https://aft-pops-ida.aka.amazon.com/vertical_choice",
-    "https://eagleeye.amazon.dev/search?redirect=false&lang=en_US&region=NA"
-  ];
-
-  for (let url of urls) {
-    window.open(url, '_blank');
+  function openLinkChime() {
+    window.open("https://signin.id.ue1.app.chime.aws//?callback_url=https%3A%2F%2Fapp.chime.aws%2F%3Fcsrf_token%3DkSZPPQ8yBJipjUrbIkXi1JqMmRt6flMc&code_challenge=NzIzMTUyOWY1NDRjZDhjMzJkZGVlNTY4MTg1Zjc1ZjlhZmVjZmMxOGVhNTgzOGVmNzAzZTI2M2VhNDcwZDU0Zg", '_blank');
   }
-}
-</script>
 
-<h2>Open All Resources for Slam Operatora</h2>
-<button onclick="openLinks()">Open Links</button>
-
-<script>
-function openLinks() {
-  const urls = [
-    "https:///tiny.amazon.com/twxs0se8/rodeamazSAT2ExSD",
-    "https://fcreaserch-na.aka.amazon.com/SAT2/search",
-    "https://aft-pops-ida.aka.amazon.com/vertical_choice",
-    "https://eagleeye.amazon.dev/search?redirect=false&lang=en_US&region=NA",
-    "https://fcswat-us.aka.amazon.com/workflow/init",
-    "https://fcswat-us.aka.amazon.com/workflow/init",
-    "https://poscatch.com/barcode-generator/"
-  ];
-
-  for (let url of urls) {
-    window.open(url, '_blank');
+  function openLinkSLACK() {
+    window.open("https://slack.com/workspace-signin", '_blank');
   }
-}
+
+  function openLinkLogin() {
+    window.open("https://fcmenu-aid-regionalized.corp.amazon.com/SAT2", '_blank');
+  }
+
+  function openLinksCode() {
+    window.open("https://fcmenu-iad-regionalized.corp.amazon.com/SAT2/laborTrackingKiosk", '_blank');
+  }
+
+  function openLinks(urls) {
+    for (let url of urls) {
+      window.open(url, '_blank');
+    }
+  }
+
+  function openTab(evt, tabName) {
+    const tabcontent = document.getElementsByClassName("tabcontent");
+    for (let i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+
+    const tablinks = document.getElementsByClassName("tablinks");
+    for (let i = 0; i < tablinks.length; i++) {
+      tablinks[i].classList.remove("active");
+    }
+
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.classList.add("active");
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelector(".tablinks").click();
+  });
 </script>
 
 </body>
